@@ -234,6 +234,10 @@ src/               React 19 + Tailwind UI
 scripts/           launchd service, Cloudflare tunnel, account recovery
 ```
 
+## License
+
+SquidPanel is licensed under the [Apache License 2.0](LICENSE).
+
 ---
 
 <sub>SquidPanel is an independent project. It is not affiliated with Mojang Studios, Microsoft, SquidServers, playit.gg or Cloudflare. Minecraft is a trademark of Mojang Studios.</sub>
