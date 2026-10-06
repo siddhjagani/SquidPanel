@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 8 9 13;
+  --surface: 14 16 22;
+  --raised: 20 23 31;
+  --overlay: 27 31 41;
+  --line: 33 38 50;
+  --line-strong: 46 52 67;
+  --fg: 232 235 242;
+  --muted: 140 147 165;
+  --faint: 90 97 115;
+  --brand: 132 116 255;
+  --brand-fg: 255 255 255;
+  --ok: 52 211 153;
+  --warn: 251 191 36;
+  --bad: 248 113 113;
+  --info: 96 165 250;
+  color-scheme: dark;
+}
+
+@layer base {
+  * { @apply border-line; }
+  html, body, #root { height: 100%; }
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+    font-feature-settings: 'cv11', 'ss01', 'tnum';
+    -webkit-tap-highlight-color: transparent;
+  }
+  ::selection { background: rgb(var(--brand) / 0.35); }
+  :focus-visible { outline: 2px solid rgb(var(--brand) / 0.7); outline-offset: 2px; }
+  input, textarea, select { font: inherit; }
+}
+
+@layer utilities {
+  .scrollbar-thin { scrollbar-width: thin; scrollbar-color: rgb(var(--line-strong)) transparent; }
+  .scrollbar-thin::-webkit-scrollbar { width: 10px; height: 10px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: rgb(var(--line-strong)); border-radius: 99px; border: 3px solid transparent; background-clip: content-box; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+  .tabular { font-variant-numeric: tabular-nums; }
+  .text-balance { text-wrap: balance; }
+  .bg-grid {
+    background-image:
+      linear-gradient(rgb(var(--line) / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--line) / 0.5) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .mask-fade-b { mask-image: linear-gradient(to bottom, black 40%, transparent); }
+  .pixelated { image-rendering: pixelated; }
+}
+
+/* Recharts tweaks */
+.recharts-cartesian-grid line { stroke: rgb(var(--line)); }
+.recharts-tooltip-cursor { stroke: rgb(var(--line-strong)); }

@@ -1,0 +1,71 @@
+{
+  "name": "squidpanel",
+  "version": "2.0.0",
+  "description": "A self-hosted control panel for the Minecraft servers on your own machine: live console, sleep-when-empty, backups, mods, and per-friend permissions.",
+  "private": true,
+  "type": "module",
+  "keywords": [
+    "minecraft",
+    "minecraft-server",
+    "server-panel",
+    "self-hosted",
+    "paper",
+    "neoforge",
+    "dashboard",
+    "macos"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "start": "node server/index.js",
+    "service:install": "REBUILD=1 ./scripts/install-service.sh",
+    "service:uninstall": "./scripts/uninstall-service.sh",
+    "service:restart": "launchctl kickstart -k gui/$(id -u)/com.squidpanel.panel",
+    "service:logs": "tail -f ~/Library/Logs/SquidPanel/panel.log ~/Library/Logs/SquidPanel/panel.err.log",
+    "reset-password": "./scripts/account.sh reset-password",
+    "create-owner": "./scripts/account.sh create-owner",
+    "list-users": "./scripts/account.sh list-users"
+  },
+  "dependencies": {
+    "@radix-ui/react-checkbox": "^1.3.3",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-switch": "^1.2.6",
+    "@radix-ui/react-tooltip": "^1.2.8",
+    "bcryptjs": "^3.0.3",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "express": "^5.2.1",
+    "lucide-react": "^0.562.0",
+    "multer": "^2.4.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router": "^7.6.1",
+    "recharts": "^2.15.4",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.4.0",
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "autoprefixer": "^10.4.23",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^7.2.4"
+  }
+}

@@ -1,0 +1,57 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{ts,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        bg: 'rgb(var(--bg) / <alpha-value>)',
+        surface: 'rgb(var(--surface) / <alpha-value>)',
+        raised: 'rgb(var(--raised) / <alpha-value>)',
+        overlay: 'rgb(var(--overlay) / <alpha-value>)',
+        line: 'rgb(var(--line) / <alpha-value>)',
+        'line-strong': 'rgb(var(--line-strong) / <alpha-value>)',
+        fg: 'rgb(var(--fg) / <alpha-value>)',
+        muted: 'rgb(var(--muted) / <alpha-value>)',
+        faint: 'rgb(var(--faint) / <alpha-value>)',
+        brand: 'rgb(var(--brand) / <alpha-value>)',
+        'brand-fg': 'rgb(var(--brand-fg) / <alpha-value>)',
+        ok: 'rgb(var(--ok) / <alpha-value>)',
+        warn: 'rgb(var(--warn) / <alpha-value>)',
+        bad: 'rgb(var(--bad) / <alpha-value>)',
+        info: 'rgb(var(--info) / <alpha-value>)',
+      },
+      fontFamily: {
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', '"SF Pro Text"', '"Segoe UI"', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', '"SF Mono"', 'ui-monospace', 'Menlo', 'Consolas', 'monospace'],
+      },
+      fontSize: { '2xs': ['0.6875rem', { lineHeight: '1rem' }] },
+      borderRadius: { xl: '14px', '2xl': '18px' },
+      boxShadow: {
+        card: '0 1px 0 0 rgb(255 255 255 / 0.03) inset, 0 1px 2px rgb(0 0 0 / 0.4)',
+        pop: '0 16px 48px -12px rgb(0 0 0 / 0.7), 0 0 0 1px rgb(var(--line-strong))',
+        glow: '0 0 0 1px rgb(var(--brand) / 0.5), 0 8px 24px -8px rgb(var(--brand) / 0.55)',
+      },
+      keyframes: {
+        'fade-in': { from: { opacity: 0 }, to: { opacity: 1 } },
+        'pop-in': { from: { opacity: 0, transform: 'translateY(4px) scale(0.98)' }, to: { opacity: 1, transform: 'none' } },
+        'slide-in': { from: { transform: 'translateX(-100%)' }, to: { transform: 'none' } },
+        pulse2: { '0%,100%': { opacity: 1 }, '50%': { opacity: 0.35 } },
+        ping2: { '0%': { transform: 'scale(1)', opacity: 0.7 }, '80%,100%': { transform: 'scale(2.4)', opacity: 0 } },
+        shimmer: { from: { backgroundPosition: '-200% 0' }, to: { backgroundPosition: '200% 0' } },
+        float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+        caret: { '0%,100%': { opacity: 1 }, '50%': { opacity: 0 } },
+      },
+      animation: {
+        'fade-in': 'fade-in .15s ease-out',
+        'pop-in': 'pop-in .16s cubic-bezier(.2,.9,.3,1.2)',
+        'slide-in': 'slide-in .2s ease-out',
+        pulse2: 'pulse2 1.4s ease-in-out infinite',
+        ping2: 'ping2 1.8s cubic-bezier(0,0,.2,1) infinite',
+        shimmer: 'shimmer 1.6s linear infinite',
+        float: 'float 6s ease-in-out infinite',
+        caret: 'caret 1s steps(1) infinite',
+      },
+    },
+  },
+  plugins: [],
+}
